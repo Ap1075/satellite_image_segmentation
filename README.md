@@ -17,10 +17,10 @@
       </ul>
     </li>
     <li><a href="#usage">Usage</a></li>
-    <li><a href="#roadmap">Roadmap</a></li>
-    <li><a href="#contributing">Contributing</a></li>
-    <li><a href="#license">License</a></li>
-    <li><a href="#contact">Contact</a></li>
+    <!-- <li><a href="#roadmap">Roadmap</a></li> -->
+    <!-- <li><a href="#contributing">Contributing</a></li> -->
+    <!-- <li><a href="#license">License</a></li> -->
+    <!-- <li><a href="#contact">Contact</a></li> -->
     <li><a href="#acknowledgements">Acknowledgements</a></li>
   </ol>
 </details>
@@ -77,7 +77,7 @@ The code was developed and tested on:
 
 1. Clone the repo
 ```sh
-git clone https://github.com/your_username_/Project-Name.git
+git clone https://github.com/Ap1075/satellite_image_segmentation.git
 
 ```
 
@@ -87,21 +87,33 @@ git clone https://github.com/your_username_/Project-Name.git
 pip install -r requirements.txt
 ```
 
-3. Setup the required directory structure to ease usage.
-
-```sh
-. setup.sh
-```
 ## Usage
-1. Create annotation masks from json annotation files. These annotation masks will then be to train the model
+1. Create annotation masks from json annotation files. These annotation masks will then be used to train the model. Masks will be placed in "annotation_masks" subdirectory.
 
 ```sh
 python masks_from_json.py
 ```
-2. You can either train your own model or run inference using existing models.
-* To train your own (single or ensemble):
+2. Setup the required directory structure to ease usage. What's happening inside?
+* Creates main directory "incubit_data" and subdirectories for train, validation, test data along with weights and output files. 
+* Fills subdirectories (except weights) with the required images and annotation masks.
+
 ```sh
+. setup.sh
+```
+Download weights from [drive](https://drive.google.com/drive/folders/1CWsW9CjVYDGz46VJ-zOW5V3dRSbEL93f?usp=sharing) and place in the 'weights' subdirectory.
+
+3. You can either train your own model or run inference using existing models.
+* To train your own (single or ensemble): (**NOTE**: all arguments have default values. For eg: weights stored in ./incubit_data/weights by default.)
+```sh
+python main_test.py train --model_type "ensemble" --visualize True --weights path/to/save_weights
+
 ```
 * To run inference using a trained model (single or ensemble):
 ```sh
+python main_test.py run --model_type "ensemble" --visualize True --weights path/to/load_weights
+
 ```
+## Acknowledgements
+1. [Segmentation Models](https://github.com/qubvel/segmentation_models)
+2. [SpaceNet challenge solutions](https://github.com/SpaceNetChallenge/SpaceNet_Optimized_Routing_Solutions)
+3. [Eff-Unet Paper, CVPR 2020](https://openaccess.thecvf.com/content_CVPRW_2020/papers/w22/Baheti_Eff-UNet_A_Novel_Architecture_for_Semantic_Segmentation_in_Unstructured_Environment_CVPRW_2020_paper.pdf)
