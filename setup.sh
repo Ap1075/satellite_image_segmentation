@@ -1,10 +1,11 @@
 #!/bin/bash 
 
-# put weights in repo working directory
 mkdir ./incubit_data
 mkdir ./incubit_data/train ./incubit_data/trainannot
 mkdir ./incubit_data/test ./incubit_data/testannot
 mkdir ./incubit_data/val ./incubit_data/valannot
+
+#Creating directories for output files and weights
 mkdir ./incubit_data/json_outs ./incubit_data/weights
 
 cp ./raw/*.png ./incubit_data/train/
