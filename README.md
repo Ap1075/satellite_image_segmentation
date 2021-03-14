@@ -108,12 +108,12 @@ Download weights from [drive](https://drive.google.com/drive/folders/1CWsW9CjVYD
 3. You can either train your own model or run inference using existing models.
 * To train your own (single or ensemble): (**NOTE**: all arguments have default values. For eg: weights stored in ./incubit_data/weights by default.)
 ```sh
-python main_test.py train --model_type "ensemble" --visualize True --weights path/to/save_weights
+python EffUnet.py train --model_type "ensemble" --visualize True --weights path/to/save_weights
 
 ```
 * To run inference using a trained model (single or ensemble):
 ```sh
-python main_test.py run --model_type "ensemble" --visualize True --weights path/to/load_weights
+python EffUnet.py run --model_type "ensemble" --visualize True --weights path/to/load_weights
 
 ```
 ## Acknowledgements
