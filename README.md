@@ -7,7 +7,7 @@
       <ul>
         <li><a href="#data">Data</a></li>
          <li><a href="#labels">Labels</a></li>
-         <li><a href="#proposed-solutions">Proposed Solution</a></li>    
+         <li><a href="#proposed-solution">Proposed Solution</a></li>    
       </ul>
     </li>
     <li>
@@ -21,7 +21,7 @@
     <!-- <li><a href="#roadmap">Roadmap</a></li> -->
     <!-- <li><a href="#contributing">Contributing</a></li> -->
     <!-- <li><a href="#license">License</a></li> -->
-    <!-- <li><a href="#contact">Contact</a></li> -->
+    <li><a href="#contact">Contact</a></li>
     <li><a href="#acknowledgements">Acknowledgements</a></li>
   </ol>
 </details>
@@ -116,6 +116,10 @@ python EffUnet.py train --model_type "ensemble" --visualize True --weights path/
 python EffUnet.py run --model_type "ensemble" --visualize True --weights path/to/load_weights
 
 ```
+## Contact
+
+[Armaan Puri](puri.armaan17@gmail.com)
+
 ## Acknowledgements
 1. [Segmentation Models](https://github.com/qubvel/segmentation_models)
 2. [SpaceNet challenge solutions](https://github.com/SpaceNetChallenge/SpaceNet_Optimized_Routing_Solutions)
