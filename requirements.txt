@@ -4,3 +4,5 @@ Keras-Applications==1.0.7
 h5py==2.10.0
 segmentation-models
 git+https://github.com/albu/albumentations
+pycocotools
+scikit-image

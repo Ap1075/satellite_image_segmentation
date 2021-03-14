@@ -5,8 +5,10 @@
     <li>
       <a href="#about-the-project">About The Project</a>
       <ul>
-        <li><a href="#the-data">The Data</a></li>
-         <li><a href="#the-labels">The Labels</a></li>    
+        <li><a href="#data">Data</a></li>
+         <li><a href="#labels">Labels</a></li>
+         <li><a href="#proposed-solutions">Proposed Solution</a></li>    
+
       </ul>
     </li>
     <li>
@@ -35,14 +37,14 @@ You are given a small slice of satellite data of a city in Japan by a fantasy la
 They had some of their interns annotate some of the data and would like you to have a go at it. They're not data scientists so the data they provided might not be optimal and their annotations not entirely consistent. But, it is what it is, and you have to make due with it.
 
 
-### The Data:
+### Data:
 The data consists of one single sattelite picture of Tokyo split into a 9x9 grid (81 non-overlapping PNG images total). The naming convention reflects it. You can put it back together if you want to.
 
 In addition, you receive 72 annotation data files containing target labels for individual images. 9 of them, forming the bottom right corner of the image, are kept away for evaluation.
 
 The data is picked in a way that will alleviate model training time, while still being consistent enough to have a good chance of yielding reasonable output on the test data.
 
-### The Labels:
+### Labels:
 The annotated data consists of three labels that are of interest in the image:
 1. Houses
 2. Buildings
@@ -59,8 +61,9 @@ The labels come from a custom annotation tool. The format doesn't follow any sta
 ### Proposed Solution:
 The problem is solved as a multi-class segmentation problem using:
 * a U-Net architecture with an EfficientNet encoder ([imagenet](http://image-net.org/) pretrained weights). Models were trained on significantly augmented data due to small dataset size.
-* The final solution is an ensemble of 7 models, each trained on progressively larger input images and finally an average is computed to attain the segmentation prediction. 
-* Interactive demo/report available in this[ jupyter notebook](link).
+* The final solution is an ensemble of 7 models, each trained on progressively larger input images and finally an average is computed to attain the segmentation prediction.
+* Output in the form of json files with the file_name and labels. Masks can be visualized for inspection as well.
+* Interactive demo/report available in this[ jupyter notebook](https://github.com/Ap1075/satellite_image_segmentation/blob/main/report.ipynb).
 
 ## Getting Started
 
@@ -72,6 +75,7 @@ The code was developed and tested on:
 * Python 3.7.10
 * Cuda 11.2
 * Nvidia driver version: 460.32.03.
+* OpenCV 4.1.2
 
 ### Installation
 
