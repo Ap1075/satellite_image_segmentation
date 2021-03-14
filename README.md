@@ -8,7 +8,6 @@
         <li><a href="#data">Data</a></li>
          <li><a href="#labels">Labels</a></li>
          <li><a href="#proposed-solutions">Proposed Solution</a></li>    
-
       </ul>
     </li>
     <li>
